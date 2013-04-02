@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WCPHX Demo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-17 19:44-0800\n"
+"PO-Revision-Date: 2013-01-17 19:44-0800\n"
+"Last-Translator: Eric Mann <eric@eamann.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wp-test\\wp-content\\plugins\\wcphx-2013-demo\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/WCPHX_Demo_Widget.php:14
+msgid "WCPHX Demo Widget"
+msgstr ""
+
+#: includes/WCPHX_Demo_Widget.php:15
+msgid "Display a post at random in the sidebar."
+msgstr ""
+
+#: includes/WCPHX_Demo_Widget.php:30
+msgid "Some default title"
+msgstr ""
+
+#: includes/WCPHX_Demo_Widget.php:35
+msgid "Title:"
+msgstr ""
+
