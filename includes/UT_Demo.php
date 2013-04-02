@@ -41,9 +41,9 @@ class UT_Demo {
 		$text = strip_shortcodes( $content );
 
 		$text = apply_filters( 'the_content', $text );
-		$text = str_replace(']]>', ']]&gt;', $text);
-		$excerpt_length = apply_filters('excerpt_length', 55);
-		$excerpt_more = apply_filters('excerpt_more', ' [...]');
+		$text = str_replace( ']]>', ']]&gt;', $text );
+		$excerpt_length = apply_filters( 'excerpt_length', 55 );
+		$excerpt_more = apply_filters( 'excerpt_more', ' [...]' );
 		$text = $this->trim_words( $text, $excerpt_length, $excerpt_more );
 
 		return $text;
