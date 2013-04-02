@@ -28,10 +28,10 @@ class UT_Demo {
 	 * Trim an excerpt down to size.
 	 *
 	 * @uses strip_shortcodes()
-	 * @uses apply_filters()    Calls 'the_content'
-	 * @uses apply_filters()    Calls 'excerpt_length'
-	 * @uses apply_filters()    Calls 'excerpt_more'
-	 * @uses wp_trim_words()
+	 * @uses apply_filters()       Calls 'the_content'
+	 * @uses apply_filters()       Calls 'excerpt_length'
+	 * @uses apply_filters()       Calls 'excerpt_more'
+	 * @uses UT_Demo::trim_words() 
 	 *
 	 * @param string $content
 	 *
@@ -44,8 +44,31 @@ class UT_Demo {
 		$text = str_replace(']]>', ']]&gt;', $text);
 		$excerpt_length = apply_filters('excerpt_length', 55);
 		$excerpt_more = apply_filters('excerpt_more', ' [...]');
-		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+		$text = $this->trim_words( $text, $excerpt_length, $excerpt_more );
 
+		return $text;
+	}
+	
+	/**
+	 * Trim a string to a specific number of words. If the string is longer than the limit
+	 * applied by $num_words, it will be cut down and autoappended with &hellip;.
+	 *
+	 * @param string $text
+	 * @param int    $num_words
+	 * @param string $null
+	 */
+	public function trim_words( $text, $num_words = 55, $more = null ) {
+		$words_array = preg_split( "/[\n\r\t ]+/", $text, $num_words + 1, PREG_SPLIT_NO_EMPTY );
+		$sep = ' ';
+		
+		if ( count( $words_array ) > $num_words ) {
+			array_pop( $words_array );
+			$text = implode( $sep, $words_array );
+			$text .= $more;
+		} else {
+			$text = implode( $sep, $words_array );
+		}
+		
 		return $text;
 	}
 }
